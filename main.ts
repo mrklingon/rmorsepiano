@@ -30,11 +30,11 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.AB, function () {
     encrypt(msg)
-    radio.sendString("" + (cmsg))
+    radio.sendString("" + (msg))
     playCode(cmsg)
 })
 radio.onReceivedString(function (receivedString) {
-    playCode(receivedString)
+    playCode(encrypt(receivedString))
 })
 input.onButtonPressed(Button.B, function () {
     encrypt(msg)
