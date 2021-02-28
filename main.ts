@@ -30,9 +30,7 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.AB, function () {
     encrypt(msg)
-    for (let index = 0; index <= msg.length - 1; index++) {
-        radio.sendString(cmsg.charAt(index))
-    }
+    radio.sendString("" + (cmsg))
     playCode(cmsg)
 })
 radio.onReceivedString(function (receivedString) {
